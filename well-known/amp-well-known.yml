@@ -1,0 +1,24 @@
+generated: '2026-07-17'
+method: searched
+source: live probes of /.well-known/ on amp.xyz and docs.amp.xyz
+notes: >-
+  Amp is a smart-contract-only ERC-20 collateral token; it publishes no
+  /.well-known/ discovery surface. All probed paths returned 404. Absence
+  recorded as valid data. A real llms.txt IS published at
+  https://docs.amp.xyz/llms.txt (captured under llms/).
+hosts:
+- host: https://amp.xyz
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /robots.txt
+    status: 404
+- host: https://docs.amp.xyz
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /llms.txt
+    status: 200
+    file: ../llms/amp-llms.txt

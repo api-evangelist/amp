@@ -1,8 +1,29 @@
 aid: amp
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/amp.png
 name: Amp
-description: 'Amp is a company surfaced as a portfolio company of pantera-capital and added to the API
-  Evangelist network as a stub for enrichment. Sector: crypto. This profile is a lead awaiting the enrichment
-  pipeline.'
+description: >-
+  Amp is an Ethereum-based digital collateral token (an ERC-20 fungible token
+  extended with ERC-1400-style partitions and ERC-777-style operator semantics)
+  designed to collateralize and instantly settle value transfer worldwide, most
+  notably as the collateral layer behind Flexa payments. The AMP contract
+  (0xff20817765cb7f73d4bde2e66e067e58d11095c2) supports partitioned staking,
+  registered collateral managers, and operator authorization, and has been
+  independently audited by ConsenSys Diligence (June 2020) and Trail of Bits
+  (August 2020). Amp is smart-contract-only and exposes no REST/HTTP API; its
+  published "API reference" documents the on-chain contract interface. The
+  project is stewarded by the Acronym Foundation and was backed by Pantera
+  Capital.
 url: https://raw.githubusercontent.com/api-evangelist/amp/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -16,6 +37,13 @@ modified: '2026-07-17'
 tags:
 - Company
 - Crypto
+- Blockchain
+- Ethereum
+- Collateral Token
+- Payments
+- DeFi
+- Smart Contracts
+- Tokenization
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -23,5 +51,32 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/amp-domain-security.yml
 - type: Website
-  url: https://amptoken.org/
+  url: https://amp.xyz/
+- type: Documentation
+  url: https://docs.amp.xyz/
+- type: APIReference
+  url: https://docs.amp.xyz/api-reference
+- type: GitHubOrganization
+  url: https://github.com/amptoken
+- type: Support
+  url: https://docs.amp.xyz/community-and-resources
+- type: Blog
+  url: https://amptoken.substack.com
+- type: WhitePaper
+  url: https://docs.amp.xyz/whitepaper
+- type: LLMsTxt
+  url: llms/amp-llms.txt
+- type: WellKnown
+  url: well-known/amp-well-known.yml
+- type: Conformance
+  url: conformance/amp-conformance.yml
+- type: Packages
+  url: packages/amp-packages.yml
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

@@ -1,0 +1,47 @@
+generated: '2026-07-17'
+method: searched
+source: https://docs.amp.xyz/api-reference and https://docs.amp.xyz/contracts-and-audits
+notes: >-
+  Amp is an Ethereum collateral token. "Conformance" here asserts the token
+  standards its on-chain contract implements plus the independent security
+  audits performed on it. Amp is not a REST/HTTP API, so the cross-cutting web
+  API standards (oauth2, oidc, rfc9457, json:api, pagination, idempotency) are
+  not applicable.
+standards:
+- id: erc20
+  conforms: true
+  evidence: >-
+    Contract implements the ERC-20 fungible token interface (totalSupply,
+    balanceOf, transfer, transferFrom, allowance, approve) per API reference.
+- id: erc1400-partitions
+  conforms: true
+  evidence: >-
+    Contract implements partitioned token semantics (balanceOfByPartition,
+    transferByPartition, partitionsOf, totalPartitions, partition strategies)
+    consistent with the ERC-1400 security-token family.
+- id: erc777-operators
+  conforms: true
+  evidence: >-
+    Contract implements operator authorization (authorizeOperator,
+    revokeOperator, isOperator, and per-partition variants) consistent with
+    ERC-777 operator semantics.
+- id: increase-decrease-allowance
+  conforms: true
+  evidence: >-
+    Contract exposes increaseAllowance / decreaseAllowance to mitigate the
+    ERC-20 approve race condition.
+audits:
+- auditor: ConsenSys Diligence
+  date: '2020-06'
+  scope: AMP smart contracts
+  result: zero critical issues; fifteen recommendations, implemented
+  url: https://consensys.net/diligence/audits/2020/06/amp
+- auditor: Trail of Bits
+  date: '2020-08'
+  scope: AMP smart contracts and collateral management contracts
+  result: zero critical issues; one low-severity recommendation, acknowledged
+  url: https://github.com/trailofbits/publications/blob/master/reviews/amp.pdf
+contract:
+  network: ethereum-mainnet
+  address: '0xff20817765cb7f73d4bde2e66e067e58d11095c2'
+  explorer: https://etherscan.io/address/0xff20817765cb7f73d4bde2e66e067e58d11095c2

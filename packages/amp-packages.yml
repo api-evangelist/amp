@@ -1,0 +1,17 @@
+generated: '2026-07-17'
+method: searched
+source: https://github.com/amptoken
+notes: >-
+  Amp is a smart-contract-only token; it ships no client-language SDKs on npm /
+  PyPI / Maven / NuGet / RubyGems / crates.io. Its first-party code is the
+  on-chain contract source published on GitHub under the amptoken org. No
+  official REST/HTTP client library exists to catalog as an SDK.
+packages:
+- language: solidity
+  registry: github
+  name: amp-token-contracts
+  url: https://github.com/amptoken/amp-token-contracts
+  description: >-
+    Canonical Solidity source for the AMP digital collateral token and its
+    collateral management contracts (MIT licensed).
+  official: true
